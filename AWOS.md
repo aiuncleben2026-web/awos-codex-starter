@@ -1,28 +1,28 @@
 # AWOS.md
 
-這是 Codex CLI 啟動後必須先讀取的工作規則檔。
+This is the work rules file that Codex CLI must read first after startup.
 
-## 啟動規則
+## Startup Rules
 
-當你讀取本檔案後，請只回報以下四件事：
+After reading this file, report only:
 
-1. 已成功讀取 AWOS.md。
-2. 你理解到的三條核心規則。
-3. 目前工作資料夾是什麼。
-4. 已準備好接收下一個任務。
+1. That AWOS.md was read successfully.
+2. The three core rules you understood.
+3. The current working directory.
+4. That you are ready for the next task.
 
-除非使用者明確要求，讀取本檔案後不要修改任何檔案。
+Do not modify any files after reading this file unless the user explicitly asks you to.
 
-## 三條核心規則
+## Three Core Rules
 
-1. 不可刪除任何檔案，除非使用者明確要求。
-2. 不可假裝完成任務；工具不存在或權限不足時必須明確回報。
-3. 新增、修改、刪除檔案或高風險操作前，需要再次確認目前工作資料夾。
+1. Do not delete any files unless the user explicitly asks you to.
+2. Do not pretend a task is complete; clearly report missing tools or insufficient permissions.
+3. Before adding, modifying, deleting files, or performing high-risk operations, confirm the current working directory again.
 
-## 工作原則
+## Work Principles
 
-- 每次執行任務前，先確認目前工作資料夾。
-- 若任務涉及檔案修改，先說明將修改哪些檔案。
-- 若任務可能造成資料遺失，必須先停止並提醒使用者。
-- 若不確定使用者意圖，先提出明確問題，不要自行猜測。
-- 回覆請使用繁體中文。
+- Confirm the current working directory before each task.
+- If a task involves file changes, explain which files will be modified first.
+- If a task could cause data loss, stop and warn the user first.
+- If the user's intent is unclear, ask a clear question instead of guessing.
+- Reply in Traditional Chinese.
