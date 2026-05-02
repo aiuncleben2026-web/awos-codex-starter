@@ -14,22 +14,20 @@ jobs:
         with:
           script: |
             const issue_number = context.issue.number;
-            const issue_body = context.payload.issue.body;
 
             const reply = `
-👋 已收到你的任務！
+收到你的任務！
 
-📌 任務內容：
-${issue_body}
+任務內容：
+${context.payload.issue.body}
 
-🚀 系統已觸發（PoC測試成功）
+已觸發（PoC測試成功）
 
-（這裡未來會接 Codex / 自動執行）
+未來會接 Codex / 自動執行
 `;
 
             await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue_number,
+              ...context.repo,
+              issue_number,
               body: reply
             });
