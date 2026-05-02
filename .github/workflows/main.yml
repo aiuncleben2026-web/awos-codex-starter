@@ -1,6 +1,8 @@
 name: Issue Auto Reply
+
 permissions:
   issues: write
+
 on:
   issues:
     types: [opened]
@@ -15,7 +17,10 @@ jobs:
         with:
           script: |
             const issue_number = context.issue.number;
-            const issue_body = context.payload.issue.body || "(no body)";
+            const issue_body = context.payload.issue.body;
+
+            console.log("=== TASK RECEIVED ===");
+            console.log(issue_body);
 
             const reply = [
               "Task received.",
