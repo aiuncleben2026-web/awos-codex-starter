@@ -14,17 +14,18 @@ jobs:
         with:
           script: |
             const issue_number = context.issue.number;
+            const issue_body = context.payload.issue.body || "(no body)";
 
-            const reply = `
-收到你的任務！
-
-任務內容：
-${context.payload.issue.body}
-
-已觸發（PoC測試成功）
-
-未來會接 Codex / 自動執行
-`;
+            const reply = [
+              "Task received.",
+              "",
+              "Issue body:",
+              issue_body,
+              "",
+              "PoC trigger succeeded.",
+              "",
+              "Future step: connect this workflow to Codex automation."
+            ].join("\n");
 
             await github.rest.issues.createComment({
               ...context.repo,
